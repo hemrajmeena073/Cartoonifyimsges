@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartoonify Your Image</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f9f9f9; }
+        input[type="text"] { width: 60%; padding: 10px; margin: 10px 0; }
+        input[type="submit"] { padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        img { margin-top: 20px; max-width: 80%; height: auto; border: 2px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Cartoonify Your Image</h1>
+    <form method="POST" action="/cartoonify">
+        <input type="text" name="url" placeholder="Enter image URL here" required>
+        <br>
+        <input type="submit" value="Cartoonify">
+    </form>
+
+    {% if cartoon_url %}
+        <h2>🎉 Cartoonified Image:</h2>
+        <img src="{{ cartoon_url }}" alt="Cartoonified Image">
+    {% endif %}
+</body>
+</html>
